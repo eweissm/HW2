@@ -54,3 +54,11 @@ We can prove this is a convex objective by finding the eigen values:
 $$ g(X) = \begin{pmatrix}2\left(\frac{1-x_1-3x_3}{2}\right)\cdot -\frac{1}{2}+2\left(\frac{-x_1-2x_2}{3}\right)\cdot -\frac{1}{3}\\
 2\left(2-2x_2-3x_3\right)\cdot -2+2\left(\frac{-x_1-2x_2}{3}\right)\cdot -\frac{2}{3}\\
 2\left(2-2x_2-3x_3\right)\cdot -3+2\left(\frac{1-x_1-3x_3}{2}\right)\cdot -\frac{3}{2}\end{pmatrix}$$
+
+$$H = \begin{pmatrix}\frac{1}{2}+\frac{2}{9}&\frac{4}{9}&\frac{3}{2}\\
+\\frac{4}{9}&8+\frac{8}{9}&12\\
+\\frac{3}{2}&12&18+\frac{9}{2}\end{pmatrix}$$
+
+ $$\left|\begin{pmatrix}\frac{1}{2}+\frac{2}{9} - \lambda &\frac{4}{9}&\frac{3}{2}\\
+\\frac{4}{9}&8+\frac{8}{9}- \lambda &12\\
+\\frac{3}{2}&12&18+\frac{9}{2}- \lambda \end{pmatrix} \right| = 0 $$
