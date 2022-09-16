@@ -39,6 +39,7 @@ $$(2 (x_1 - 1) - 3 (x_2 - 1))(2 (x_1 - 1) - 1 (x_2 - 1)) < 0 $$
 
 # Question 2
 
+## Part A
 This problem can be rewritten as 
 
 $$ min \ \sqrt{ (x_1 +1)^2 + (x_2)^2 + (x_3 -1)^2} $$
@@ -62,3 +63,12 @@ $$H = \begin{pmatrix}\frac{1}{2}+\frac{2}{9}&\frac{4}{9}&\frac{3}{2}\\
  $$\left|\begin{pmatrix}\frac{1}{2}+\frac{2}{9} - \lambda &\frac{4}{9}&\frac{3}{2}\\
 \\frac{4}{9}&8+\frac{8}{9}- \lambda &12\\
 \\frac{3}{2}&12&18+\frac{9}{2}- \lambda \end{pmatrix} \right| = 0 $$
+
+$$ λ\approx 0.54108\dots ,λ\approx 2.00000\dots ,λ\approx 29.57002\dots $$ 
+Therefore the hessian is P.D. and therefore the objective is convex
+
+## Part B
+See attached  files
+
+# Question 3
+
