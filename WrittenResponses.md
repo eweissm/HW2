@@ -94,3 +94,13 @@ The domain of the fucntion is
 $$ 0 \leq p_i \leq p_{max} $$
 
 to prove this we could analyze a system where i = 1, 2. Therefore we have 2 lights. 
+
+We can graph the domain of p values for each light as below
+
+![image](IMG_1452.jpg)
+
+clearly this is a convex domain. As the number of lights increases this domain enters more dimensions, but the same principles apply and the domain remains convex.
+
+Now we need to prove the objective is convex. The objextive is:
+
+$$ {max}_k \ (a_k^T p, I_t) $$
