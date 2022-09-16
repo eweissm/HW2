@@ -73,7 +73,7 @@ See attached  files
 
 # Question 3
 
-A hyper plane can be written as 
+A hyperplane can be written as 
 
 $$ a^T x = c$$
 
@@ -84,3 +84,13 @@ $$ \bigtriangledown_x  a^T x \=   a^T$$
 $$H(a^T) = 0 \ (zero\ matrix) $$
 
 Because H = 0, the eigen values would all equal 0, and therefore the hessian is P.S.D, meaning the plane must be convex. This can also be determined logically by thinking of a plane in any dimension. They will all be linear and therefore must be convex.
+
+# Question 4
+
+## Part A
+For a problem to be convex the objective and the domain must be convex.
+The domain of the fucntion is 
+
+$$ 0 \leq p_i \leq p_{max} $$
+
+to prove this we could analyze a system where i = 1, 2. Therefore we have 2 lights. 
