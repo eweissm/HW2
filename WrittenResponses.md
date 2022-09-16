@@ -103,4 +103,14 @@ clearly this is a convex domain. As the number of lights increases this domain e
 
 Now we need to prove the objective is convex. The objextive is:
 
-$$ {max}_k \ (a_k^T p, I_t) $$
+$$ {max}_k \ (h(a_k^T p, I_t)) $$
+
+The max of a set of functions is convex so we need only prove that h is convex for any given k
+
+$$ h(I, I_t) = 
+    \begin{array}{lr}
+        I_t/I, & \text{if } I \leq I_t\\
+         I/I_t, & \text{if } I_t \leq I
+    \end{array}
+ $$ 
+
