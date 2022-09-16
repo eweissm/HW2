@@ -26,3 +26,15 @@ $$ \bigtriangledown_x (2x_1^2 -4-x_1 x_2 +1.5x_2^2 +x_2) \=  \begin{pmatrix}4x_1
  $$ f(x_1, x_2) = f(1,1) + g(1,1)(\partial X) + 1/2 \begin{pmatrix}\partial x_1&\partial x_2\end{pmatrix} \begin{pmatrix}4&-4\\
  -4&3\end{pmatrix}  \begin{pmatrix}\partial x_1 \\
  \partial x2\end{pmatrix}$$
+ 
+ $$ with\  \partial x_i = x_i - 1$$
+
+If we solve for f(X) -f(X_0) and simplify some terms, we get
+
+$$ f(X) -f(X_0) = 4\partial x_1^2-8\partial x_1 \partial x_2+3 \partial x_2^2= (2 \partial x_1 - 3 \partial x_2)(2 \partial x_1 - 1 \partial x_2)$$
+
+Therefore the slope is downward for any set of X values which satisfies the question 
+
+$$(2 (x_1 - 1) - 3 (x_2 - 1))(2 (x_1 - 1) - 1 (x_2 - 1)) < 0 $$
+
+#Question 2
