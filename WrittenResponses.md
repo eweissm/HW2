@@ -37,4 +37,20 @@ Therefore the slope is downward for any set of X values which satisfies the ques
 
 $$(2 (x_1 - 1) - 3 (x_2 - 1))(2 (x_1 - 1) - 1 (x_2 - 1)) < 0 $$
 
-#Question 2
+# Question 2
+
+This problem can be rewritten as 
+
+$$ min \ \sqrt{ (x_1 +1)^2 + (x_2)^2 + (x_3 -1)^2} $$
+
+$$S.T.\ x_1+2x_2+3x_3 = 1$$
+
+We can simplify the objective by removing the square root and we can remove the constraint by substituting the contraint into the objective as such:
+
+$$ min \  (2-2x_2-3x_3)^2 + (\frac{1-x_1-3x_3}{2})^2 + (\frac{-x_1-2x_2}{3})^2 $$
+
+We can prove this is a convex objective by finding the eigen values:
+
+$$ g(X) = \begin{pmatrix}2\left(\frac{1-x_1-3x_3}{2}\right)\cdot -\frac{1}{2}+2\left(\frac{-x_1-2x_2}{3}\right)\cdot -\frac{1}{3}\\
+2\left(2-2x_2-3x_3\right)\cdot -2+2\left(\frac{-x_1-2x_2}{3}\right)\cdot -\frac{2}{3}\\
+2\left(2-2x_2-3x_3\right)\cdot -3+2\left(\frac{1-x_1-3x_3}{2}\right)\cdot -\frac{3}{2}\end{pmatrix}$$
