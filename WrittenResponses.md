@@ -65,6 +65,7 @@ $$H = \begin{pmatrix}\frac{1}{2}+\frac{2}{9}&\frac{4}{9}&\frac{3}{2}\\
 \\frac{3}{2}&12&18+\frac{9}{2}- \lambda \end{pmatrix} \right| = 0 $$
 
 $$ λ\approx 0.54108\dots ,λ\approx 2.00000\dots ,λ\approx 29.57002\dots $$ 
+
 Therefore the hessian is P.D. and therefore the objective is convex
 
 ## Part B
@@ -72,3 +73,14 @@ See attached  files
 
 # Question 3
 
+A hyper plane can be written as 
+
+$$ a^T x = c$$
+
+which we can find the gradient and then the hessian for:
+
+$$ \bigtriangledown_x  a^T x \=   a^T$$
+
+$$H(a^T) = 0 \ (zero\ matrix) $$
+
+Because H = 0, the eigen values would all equal 0, and therefore the hessian is P.S.D, meaning the plane must be convex. This can also be determined logically by thinking of a plane in any dimension. They will all be linear and therefore must be convex.
