@@ -48,21 +48,21 @@ $$S.T.\ x_1+2x_2+3x_3 = 1$$
 
 We can simplify the objective by removing the square root and we can remove the constraint by substituting the contraint into the objective as such:
 
-$$ min \  (2-2x_2-3x_3)^2 + (\frac{1-x_1-3x_3}{2})^2 + (\frac{-x_1-2x_2}{3})^2 $$
+$$ min \  (2-2x_2-3x_3)^2 + (\frac{1-x_1-3x_3}{2})^2 + (\frac{1-x_1-2x_2}{3})^2 $$
 
 We can prove this is a convex objective by finding the eigen values:
 
-$$ g(X) = \begin{pmatrix}2\left(\frac{1-x_1-3x_3}{2}\right)\cdot -\frac{1}{2}+2\left(\frac{-x_1-2x_2}{3}\right)\cdot -\frac{1}{3}\\
-2\left(2-2x_2-3x_3\right)\cdot -2+2\left(\frac{-x_1-2x_2}{3}\right)\cdot -\frac{2}{3}\\
-2\left(2-2x_2-3x_3\right)\cdot -3+2\left(\frac{1-x_1-3x_3}{2}\right)\cdot -\frac{3}{2}\end{pmatrix}$$
+$$ g(X) = \begin{pmatrix}\frac{8x_2+27x_3+13x_1-13}{18}\\ 
+12x_3+\frac{80x_2+4x_1-4}{9}-8\\
+12x_2+\frac{45x_3+3x_1-3}{2}-12\end{pmatrix}$$
 
-$$H = \begin{pmatrix}\frac{1}{2}+\frac{2}{9}&\frac{4}{9}&\frac{3}{2}\\
-\\frac{4}{9}&8+\frac{8}{9}&12\\
-\\frac{3}{2}&12&18+\frac{9}{2}\end{pmatrix}$$
+$$H = \begin{pmatrix}\frac{13}{18}&\frac{4}{9}&\frac{3}{2}\\
+\frac{4}{9}&\frac{80}{9}&12\\
+\frac{3}{2}&12&\frac{45}{2}\end{pmatrix}$$
 
- $$\left|\begin{pmatrix}\frac{1}{2}+\frac{2}{9} - \lambda &\frac{4}{9}&\frac{3}{2}\\
-\\frac{4}{9}&8+\frac{8}{9}- \lambda &12\\
-\\frac{3}{2}&12&18+\frac{9}{2}- \lambda \end{pmatrix} \right| = 0 $$
+ $$ \left| \begin{pmatrix}\frac{13}{18} -\lambda &\frac{4}{9}&\frac{3}{2}\\
+\frac{4}{9}&\frac{80}{9}-\lambda &12\\
+\frac{3}{2}&12&\frac{45}{2}-\lambda \end{pmatrix} \right| = 0 $$
 
 $$ λ\approx 0.54108\dots ,λ\approx 2.00000\dots ,λ\approx 29.57002\dots $$ 
 
