@@ -105,7 +105,7 @@ Now we need to prove the objective is convex. The objextive is:
 
 $$ {max}_k \ (h(a_k^T p, I_t)) $$
 
-The max of a set of functions is convex so we need only prove that h is convex for any given k
+The max of a set of functions is convex so we need only prove that h is convex WRT p for any given k
 
 $$ h(I, I_t) = 
     \begin{array}{lr}
@@ -114,3 +114,6 @@ $$ h(I, I_t) =
     \end{array}
  $$ 
 
+$$G(h) = \frac{\partial h}{\partial p} = \frac{dh}{dI} * \frac{\partial a^T P}{\partial p} = h'*a^T$$
+
+$$H(h) =  \frac{\partial^2 h}{\partial p^2} = \frac{dh'}{dI} * \frac{\partial a^T P}{\partial p}*a^T = h''aa^T$$
