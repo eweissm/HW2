@@ -140,3 +140,12 @@ $$h''y^2 \geq 0 $$
 
 In order for $y^2$ to be equal to zero the dimensions of w would need to be greater than the dimensions of a, or in other words n>m. Therefore, if n>m we could have a P.S.D. hessian for h and we could have infinite solutions. Likewise, if m = n, we would have a P.D. hessian and therefore we could have only 1 unique solution. 
 So to answer the question, if we has 10 mirrors, we would have a unique solution, if we have less then 10 mirrors we would potentially have infinite solutions and if we had more than 10 mirrors we could have no solution.  
+
+# Question 5
+To start, the max of any set of convex functions is convex so we only need to prove that xy-c(x) is convex for any given A. Next we will find the hessian of the function WRT y:
+
+$$g = \frac{dc^\star}{dy}= x$$
+
+$$h = \frac{d^2c^\star}{dy^2}= 0$$
+
+Hessian is zero, so the eigen value is zero, so the function is P.S.D. so therefore the function is convex
