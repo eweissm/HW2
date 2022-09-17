@@ -117,3 +117,26 @@ $$ h(I, I_t) =
 $$G(h) = \frac{\partial h}{\partial p} = \frac{dh}{dI} * \frac{\partial a^T P}{\partial p} = h'*a^T$$
 
 $$H(h) =  \frac{\partial^2 h}{\partial p^2} = \frac{dh'}{dI} * \frac{\partial a^T P}{\partial p}*a^T = h''aa^T$$
+
+we know $aa^T$ is a mxm matrix which must be P.S.D. so it must be convex. So now we need to  show that h is convex. This can be shown visually 
+
+![IMG_1453](https://user-images.githubusercontent.com/73143081/190832484-92f70ae8-374a-478d-8fe1-6837edd4b44d.jpg)
+
+Therefore, because H WRT I is convex, h'' must be a number greater than 0. Therefore the objective is convex WRT P.
+Now both the objective and the domain are convex, so the problem is convex. 
+
+## Part B
+
+## Part C
+In order to answer this question we must first show whether the hessian of h is P.D or P.S.D because as we showed in class a strictly convex problem will have a hessian that is P.D and will therefore have a unique solution. We know that P is a vector with n values and $a_k$ will be a vector with m values. As we showed in part A, the hessian of h is $h''aa^T$ which would be a mxm matrix scaled by h''. 
+
+$$\text{If } w \neq 0 \text{ and } w \in \mathbb{R}^n $$
+
+Then if
+
+$$w^ta=y \ and\ a^tw=y$$
+
+$$h''y^2 \geq 0 $$
+
+In order for $y^2$ to be equal to zero the dimensions of w would need to be greater than the dimensions of a, or in other words n>m. Therefore, if n>m we could have a P.S.D. hessian for h and we could have infinite solutions. Likewise, if m = n, we would have a P.D. hessian and therefore we could have only 1 unique solution. 
+So to answer the question, if we has 10 mirrors, we would have a unique solution, if we have less then 10 mirrors we would potentially have infinite solutions and if we had more than 10 mirrors we could have no solution.  
