@@ -176,6 +176,99 @@ And the convergence is
 
 ![untitled4](https://user-images.githubusercontent.com/73143081/190884159-fdafa545-5122-4119-98eb-b437a8e76fb6.jpg)
 
+### Newtons Method
+```
+initguessX2= 13;
+initguessX3=10;
+
+initGuess= [1-2*initguessX2-3*initguessX3, initguessX2, initguessX3];
+
+X=initGuess;
+
+n = 100;
+distances=[d(initGuess(2),initGuess(3))];
+X1 = [];
+X2 = [];
+X3 = [];
+gTemp = [];
+H = [ 10 12,
+    12 20];
+stop = [0,
+    0];
+
+for i = 1:n
+    
+    X1(end+1)= X(1);
+    X2(end+1)= X(2);
+    X3(end+1)= X(3);
+    
+    gTemp = g(X(2), X(3));
+
+    dx= -inv(H)*gTemp;
+    
+    if(dx == stop)
+        break;
+    end
+   alpha=  (gTemp.'*gTemp)/(gTemp.'*H*gTemp);
+    X(2)= X(2) +dx(1);
+    X(3)= X(3) +dx(2);
+     
+    distances(end+1) = d( X(2), X(3));
+    X(1)= 1-2*X(2)-3*X(3);
+    
+end
+X
+
+dExact= d(-1/7, 11/14);
+k=1: length(distances);
+conv = abs(dExact- distances );
+plot(k,  conv)
+set(gca, 'YScale', 'log');
+
+
+[Y,Z] = meshgrid(-3:1:3,-3:1:3);
+A=-2*Y-3*Z+1;
+
+
+figure;
+hold on;
+plot3(-1,0, 1,'.r', 'MarkerSize',15 )
+plot3(initGuess(1),initGuess(2),initGuess(3),'.g', 'MarkerSize',25 )
+plot3(X1, X2, X3,'.b', 'MarkerSize',10 )
+
+surf(A,Y,Z,'FaceAlpha',0.5)
+
+
+function dist = d(x2,x3)
+dist = (2-2*x2-3*x3)^2 +(x2)^2+(x3-1)^2; 
+end
+
+function grad = g(x2,x3)
+grad = [10*x2+12*x3-8,
+   12*x2+20*x3-14 ]; 
+end
+```
+For initial guess $x_2 = 13,\ x_3=10$ the output closest point is 
+
+$$X = \begin{pmatrix} -1.071428571428572\\
+-0.142857142857143\\
+0.785714285714286\end{pmatrix}$$
+
+And the convergence is 
+
+![untitled5](https://user-images.githubusercontent.com/73143081/190884434-0e30a3f4-9ae6-4e56-9933-4aaf355e23dc.png)
+
+For initial guess $x_2 = 0,\ x_3=0$ the output closest point is 
+
+$$X = \begin{pmatrix} -1.071428571428572\\
+-0.142857142857143\\
+0.785714285714286\end{pmatrix}$$
+
+And the convergence is 
+
+![untitled6](https://user-images.githubusercontent.com/73143081/190884476-e2466f43-3916-49b1-a69b-8a0dc9a60608.jpg)
+
+Clearly, the newtons method converges significantly faster. With lucky initial conditions, it could converge in as little as 2 interations as opposed to gradient decent needed nearly 30 iterations. 
 # Question 3
 
 A hyperplane can be written as 
