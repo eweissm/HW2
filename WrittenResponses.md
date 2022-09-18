@@ -33,7 +33,7 @@ If we solve for f(X) -f(X_0) and simplify some terms, we get
 
 $$ f(X) -f(X_0) = 4\partial x_1^2-8\partial x_1 \partial x_2+3 \partial x_2^2= (2 \partial x_1 - 3 \partial x_2)(2 \partial x_1 - 1 \partial x_2)$$
 
-Therefore the slope is downward for any set of X values which satisfies the question 
+Therefore the slope is downward for any set of X values which satisfies the equation 
 
 $$(2 (x_1 - 1) - 3 (x_2 - 1))(2 (x_1 - 1) - 1 (x_2 - 1)) < 0 $$
 
@@ -71,6 +71,7 @@ We can easily find the exact values using analytical methods and this give us th
 $$X = \begin{pmatrix} -\frac{15}{14}\\
 -\frac{1}{7}\\
 \frac{11}{14}\end{pmatrix}$$
+
 We will use this to find our convergence.
 
 note: I coded this in matlab as I am more comfortable using Matlab and we did not need to use the python optimizations. 
