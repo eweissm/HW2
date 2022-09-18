@@ -48,28 +48,133 @@ $$S.T.\ x_1+2x_2+3x_3 = 1$$
 
 We can simplify the objective by removing the square root and we can remove the constraint by substituting the contraint into the objective as such:
 
-$$ min \  (2-2x_2-3x_3)^2 + (\frac{1-x_1-3x_3}{2})^2 + (\frac{1-x_1-2x_2}{3})^2 $$
+$$ min \  (2-2x_2-3x_3)^2 + (x_2)^2 + (x_3-1)^2 $$
 
 We can prove this is a convex objective by finding the eigen values:
 
-$$ g(X) = \begin{pmatrix}\frac{8x_2+27x_3+13x_1-13}{18}\\ 
-12x_3+\frac{80x_2+4x_1-4}{9}-8\\
-12x_2+\frac{45x_3+3x_1-3}{2}-12\end{pmatrix}$$
+$$ g(X) = \begin{pmatrix}\ 10x_2+12x_3-8\\ 
+12x_2+20x_3-14\end{pmatrix}$$
 
-$$H = \begin{pmatrix}\frac{13}{18}&\frac{4}{9}&\frac{3}{2}\\
-\frac{4}{9}&\frac{80}{9}&12\\
-\frac{3}{2}&12&\frac{45}{2}\end{pmatrix}$$
+$$H = \begin{pmatrix}10&12\\
+12&20\end{pmatrix}$$
 
- $$ \left| \begin{pmatrix}\frac{13}{18} -\lambda &\frac{4}{9}&\frac{3}{2}\\
-\frac{4}{9}&\frac{80}{9}-\lambda &12\\
-\frac{3}{2}&12&\frac{45}{2}-\lambda \end{pmatrix} \right| = 0 $$
+ $$ \left| \begin{pmatrix}10-\lambda&12\\
+12&20-\lambda\end{pmatrix} \right| = 0 $$
 
-$$ λ\approx 0.54108\dots ,λ\approx 2.00000\dots ,λ\approx 29.57002\dots $$ 
+$$ λ=2,28 $$ 
 
-Therefore the hessian is P.D. and therefore the objective is convex
+Therefore the hessian is P.D., meaning the objective is convex
 
 ## Part B
-See attached  files
+We can easily find the exact values using analytical methods and this give us that the solution is
+
+$$X = \begin{pmatrix} -\frac{15}{14}\\
+-\frac{1}{7}\\
+\frac{11}{14}\end{pmatrix}$$
+We will use this to find our convergence.
+
+note: I coded this in matlab as I am more comfortable using Matlab and we did not need to use the python optimizations. 
+
+### Gradient Decent
+
+```
+initguessX2= 1;
+initguessX3= 1;
+
+initGuess= [1-2*initguessX2-3*initguessX3, initguessX2, initguessX3];
+
+X=initGuess;
+
+n = 1000;
+distances=[];
+X1 = [];
+X2 = [];
+X3 = [];
+gTemp = [];
+H = [ 10 12,
+    12 20];
+stop = [0,
+    0];
+
+for i = 1:n
+    
+    X1(end+1)= X(1);
+    X2(end+1)= X(2);
+    X3(end+1)= X(3);
+    
+    gTemp = g(X(2), X(3));
+  if(gTemp == stop)
+        break;
+    end
+   alpha=  (gTemp.'*gTemp)/(gTemp.'*H*gTemp);
+    
+    X(2)= X(2) - alpha*gTemp(1);
+    X(3)= X(3) - alpha*gTemp(2);
+     
+    distances(end+1) = d( X(2), X(3));
+    X(1)= 1-2*X(2)-3*X(3);
+    
+end
+X
+
+dExact= d(-1/7, 11/14);
+k=1: length(distances);
+conv = abs(dExact- distances );
+plot(k,  conv)
+set(gca, 'YScale', 'log');
+
+
+[Y,Z] = meshgrid(-3:1:3,-3:1:3);
+A=-2*Y-3*Z+1;
+
+
+figure;
+hold on;
+plot3(-1,0, 1,'.r', 'MarkerSize',15 )
+plot3(initGuess(1),initGuess(2),initGuess(3),'.g', 'MarkerSize',25 )
+plot3(X1, X2, X3,'.b', 'MarkerSize',10 )
+
+surf(A,Y,Z,'FaceAlpha',0.5)
+
+
+function dist = d(x2,x3)
+dist = (2-2*x2-3*x3)^2 +(x2)^2+(x3-1)^2; 
+end
+
+function grad = g(x2,x3)
+grad = [10*x2+12*x3-8,
+   12*x2+20*x3-14 ]; 
+end
+```
+For initial guess $x_2 = 1,\ x_3=1$ the output closest point is 
+
+$$X = \begin{pmatrix} -1.071428571428571\\
+-0.142857142857143\\
+0.785714285714286\end{pmatrix}$$
+
+And the convergence is 
+
+![untitled2](https://user-images.githubusercontent.com/73143081/190884025-e5e0153d-ccdd-486f-a941-7386afa218c8.jpg)
+
+For initial guess $x_2 = 0,\ x_3=0$ the output closest point is 
+
+$$X = \begin{pmatrix} -1.071428571428572\\
+-0.142857142857143\\
+0.785714285714286\end{pmatrix}$$
+
+And the convergence is 
+
+![untitled3](https://user-images.githubusercontent.com/73143081/190884104-755b4e65-d9da-4c25-adb7-631682cdf3d8.jpg)
+
+For initial guess $x_2 = 50,\ x_3=50$ the output closest point is 
+
+$$X = \begin{pmatrix} -1.071428571428572\\
+-0.142857142857143\\
+0.785714285714286\end{pmatrix}$$
+
+And the convergence is 
+
+![untitled4](https://user-images.githubusercontent.com/73143081/190884159-fdafa545-5122-4119-98eb-b437a8e76fb6.jpg)
 
 # Question 3
 
