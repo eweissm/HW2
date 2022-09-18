@@ -156,6 +156,8 @@ And the convergence is
 
 ![untitled2](https://user-images.githubusercontent.com/73143081/190884025-e5e0153d-ccdd-486f-a941-7386afa218c8.jpg)
 
+note: the y-axis is the $log(|f(k) - f_{exact}|)$ and the x axis is k
+
 For initial guess $x_2 = 0,\ x_3=0$ the output closest point is 
 
 $$X = \begin{pmatrix} -1.071428571428572\\
@@ -166,6 +168,8 @@ And the convergence is
 
 ![untitled3](https://user-images.githubusercontent.com/73143081/190884104-755b4e65-d9da-4c25-adb7-631682cdf3d8.jpg)
 
+note: the y-axis is the $log(|f(k) - f_{exact}|)$ and the x axis is k
+
 For initial guess $x_2 = 50,\ x_3=50$ the output closest point is 
 
 $$X = \begin{pmatrix} -1.071428571428572\\
@@ -175,6 +179,8 @@ $$X = \begin{pmatrix} -1.071428571428572\\
 And the convergence is 
 
 ![untitled4](https://user-images.githubusercontent.com/73143081/190884159-fdafa545-5122-4119-98eb-b437a8e76fb6.jpg)
+
+note: the y-axis is the $log(|f(k) - f_{exact}|)$ and the x axis is k
 
 ### Newtons Method
 ```
@@ -258,6 +264,9 @@ And the convergence is
 
 ![untitled5](https://user-images.githubusercontent.com/73143081/190884434-0e30a3f4-9ae6-4e56-9933-4aaf355e23dc.png)
 
+note: the y-axis is the $log(|f(k) - f_{exact}|)$ and the x axis is k
+
+
 For initial guess $x_2 = 0,\ x_3=0$ the output closest point is 
 
 $$X = \begin{pmatrix} -1.071428571428572\\
@@ -267,6 +276,9 @@ $$X = \begin{pmatrix} -1.071428571428572\\
 And the convergence is 
 
 ![untitled6](https://user-images.githubusercontent.com/73143081/190884476-e2466f43-3916-49b1-a69b-8a0dc9a60608.jpg)
+
+note: the y-axis is the $log(|f(k) - f_{exact}|)$ and the x axis is k
+
 
 Clearly, the newtons method converges significantly faster. With lucky initial conditions, it could converge in as little as 2 interations as opposed to gradient decent needed nearly 30 iterations. 
 # Question 3
