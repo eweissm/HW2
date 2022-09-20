@@ -344,18 +344,7 @@ $$P_1 + P_2 +\ ...\ + P_{10} = P^\star$$
 This is linear and, for the same reasons that the domain in part a was convex, this constaint will be convex. As I will better explain in part c of this question, if we have 10 mirrors, we would have a unique solution, if we have less then 10 mirrors we would potentially have infinite solutions and if we have more than 10 mirrors we could have no solution.  
 
 ## Part C
-In order to answer this question we must first show whether the hessian of h is P.D or P.S.D because as we showed in class a strictly convex problem will have a hessian that is P.D and will therefore have a unique solution. We know that P is a vector with n values and $a_k$ will be a vector with m values. As we showed in part A, the hessian of h is $h''aa^T$ which would be a mxm matrix scaled by h''. 
-
-$$\text{If } w \neq 0 \text{ and } w \in \mathbb{R}^n $$
-
-Then if
-
-$$w^ta=y \ and\ a^tw=y$$
-
-$$h''y^2 \geq 0 $$
-
-In order for $y^2$ to be equal to zero the dimensions of w would need to be greater than the dimensions of a, or in other words n>m. Therefore, if n>m we could have a P.S.D. hessian for h and we could have infinite solutions. Likewise, if m = n, we would have a P.D. hessian and therefore we could have only 1 unique solution. 
-So to answer the question, if we have 10 mirrors, we would have a unique solution, if we have less then 10 mirrors we would potentially have infinite solutions and if we have more than 10 mirrors we could have no solution.  
+There will be no solution to solve this problem now because this additional constraint makes the problem nonconvex. If we imagine a situation where we have 2 lamps and only one can be powered on, then the domain of the p values becomes all the possible values from 0 to pmax for p_1 or all the possible values from 0 to pmax for p_2. Unlike in part A, we cannot have the shared space where both lights contribute to the total power. Therefore, in the actual problem with n lamps, we will still have a nonconvex problem. 
 
 # Question 5
 To start, the max of any set of convex functions is convex so we only need to prove that xy-c(x) is convex for any given A. Next we will find the hessian of the function WRT y:
